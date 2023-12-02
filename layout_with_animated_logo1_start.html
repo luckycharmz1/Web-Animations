@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Animation Demo on Bobo Fett's Portfolio</title>
+ <link type="text/css" rel="stylesheet" href="css/normalize_v8.css">
+ <link href="https://fonts.googleapis.com/css?family=Bungee|Roboto400,500i|Roboto+Condensed:700" rel="stylesheet">
+ <link type="text/css" rel="stylesheet" href="css/gallery.css">
+ <link rel="stylesheet" href="css/lightbox.css"><!-- link to lightbox gallery with animation -->
+ <link rel="stylesheet" href="css/animation2.css"><!-- link to stuff animation -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/> <!-- link to animate.css library -->
+<style type="text/css">	
+	body{
+		background-color:#fd503b; 
+		background-image:url(img/back2.jpg);
+		background-attachment:  fixed; 
+		background-repeat:  no-repeat;
+		background-position: 0 0;
+		background-size: cover;
+		font-family: 'Roboto', sans-serif;
+	}
+	
+/* Basic Layout */
+	
+	#wrapper{
+	width:90%;/* change to 100% at end*/
+	width:100%;
+	max-width:1170px;
+	min-width:300px;
+	margin:0 auto;
+	box-sizing: border-box;
+	border: 1px solid rgba(0,0,0,0.05);
+}
+	header, article, footer{
+	padding:1rem;
+	box-sizing: border-box;
+	}
+	nav, footer{
+    background: #ddd;
+	box-sizing: border-box;
+    }
+	
+	#main{
+		background-color: #fff;
+	}
+	
+	#about{
+		margin: 100px 0;
+		padding:1em 0;
+		box-sizing: border-box;
+	}
+	#about p{
+		max-width: 800px;
+		margin: 0 auto;
+	}
+
+	/* End Basic Layout */
+	
+	/* nav */
+	#nav1{
+		position: sticky;
+		top: 0;
+		background-color:rgba(0,0,0,0.8);
+		z-index: 1000;
+	}
+	#nav1 ul{
+		height: 50px;
+		margin: 0;
+		padding: 0;
+		display: flex;
+		align-items: center;
+}
+    
+    #nav1 ul li{
+        list-style: none;
+        margin: 0;
+        padding: 0;
+		width: 100%;
+    }
+    
+    #nav1 ul li a{
+        display: block;
+        padding: .5rem;
+        text-decoration: none;
+        text-align: center;
+        font-size:1.3rem; 
+        color: rgba(255,255,255,1.0);
+        transition: all .3s ease;/* ADD CODE HERE - animating the change in color and background color for the links using CSS Transitions */
+    }
+    #nav1 ul li a:hover{
+        background-color: rgba(94, 93, 160,0.7);
+        color: rgba(255, 255, 255,1.0);
+    }
+	
+	/* end nav */
+	
+    /* masthead code */
+	#masthead2{
+		height: calc(100vh - 50px);
+		box-sizing: border-box;
+		
+	}
+	#masthead2 div{
+		padding: 1em;
+		text-align: center;
+		color:#fff;
+		position: absolute;
+		background-color: rgba(0,0,0,0.5);
+        top:30vh;
+        left: 50%;
+		transform: translate(-50%, 0);
+		text-shadow: 0px 1px 0px #999, 0px 2px 0px #888, 0px 3px 0px #777, 0px 4px 0px #666, 0px 5px 0px #555, 0px 6px 0px #444, 0px 7px 0px #333, 0px 8px 7px #001135;
+		letter-spacing: 3px;
+		outline: 1px solid #fff;
+		font-family: Bungee, sans-serif;
+		
+	}
+	
+	#masthead2 h1{
+        font-size: 2.5em;	
+    }
+	
+	#masthead2 div p{
+	font-size: 1.5em;	
+	}
+
+/* first animation -  See the linked file animation2.css for the code for this one */
+	#masthead2 div:hover{
+		animation: stuff 1s ease infinite;/* ADD CODE HERE */
+	}
+/* end first animation*/
+	
+/* end masthead code */
+
+/* text styles */
+	.secondaryHeading{
+        color:#B9311D;
+		padding:0 10%;
+		text-align: center;
+        font-weight: 600;
+     	font-style: italic;
+        font-size: 2.5rem;
+		text-shadow: 1px 3px 3px rgba(0,0,0,0.2),
+                 0px -2px 5px rgba(255,255,255,0.3);
+    }
+	
+	#about h3{
+		color:#B9311D;
+		margin-top: 0;
+		text-align: center;
+        font-weight: 600;
+     	font-style: italic;
+        font-size: 1.5rem;
+		text-shadow: 1px 3px 3px rgba(0,0,0,0.2),
+                 0px -2px 5px rgba(255,255,255,0.3);
+	}
+	
+	/* end text styles */
+	
+	/* other styles */
+	.responsive_image{
+        max-width: 100%;
+        height: auto;
+    }
+	/* end other styles */
+	
+	/* responsive styles */
+@media screen and (max-width:500px){	
+	.secondaryHeading{
+        font-size: 1.5rem;	
+		padding:0;
+    }	
+	.row{
+		display: block;
+		margin-bottom: 0;
+	}
+
+	.artwork {
+        margin: 2em;
+	}
+	#about{
+		margin: 2em 0;
+	}
+	#masthead2{
+		height: calc(100vh - 125px);
+		}	
+	#masthead2 div{
+		top:15vh;
+	}
+	}
+    /* end responsive styles */
+    
+   
+#ani1 img{
+    width:150px;
+	height:auto;/* ends up 116px */
+    }
+/* ADD CODE STARTING HERE */
+#ani1{
+	position: absolute;
+	left: 8px;top: 8px;
+	animation: logoAnimate 5s ease 2s 1 normal forwards;
+}
+    /* You could use separate properties instead of the shorthand  
+        animation-name:logoAnimate;
+        animation-duration:5s;
+        animation-timing-function:ease;
+        animation-delay:2s;
+        animation-iteration-count:1;
+        animation-direction:normal
+        animation-fill-mode:forwards;
+        animation-play-state:not used */
+@keyframes logoAnimate {
+	0% {left: 8px;top: 8px;}
+	25% {left: calc(100% - 150px);top: 8px;}
+	50% {left: calc(100% - 150px);top:calc(100% - 166px) 8px;}
+	75% {left: calc(100% - 150px);top:calc(30vh% + 300px) 8px;}
+	100% {left: 8px;top: 8px;}
+}
+
+
+</style>
+<!-- adding jquery for some of the javascript animation, like the page fade in -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"></script>
+</head>
+
+<body>
+<div id="wrapper">
+	<header id="masthead2">
+     <div>
+     <h1>Bobo Fett's Portfolio</h1>
+     <p>I Make Stuff that people like</p>
+    <!-- add code to the arrow image to make it bounce using the linked animate.css library -->
+      <a href="#nav1"><img src="img/arrow1.png" height="auto" width="50" class="animate__animated animate__bounce animate__delay-5s"></a>
+      </div>
+	
+</header>
+<nav id="nav1">
+    <ul>
+    <li><a href="#wrapper">Home</a></li>
+    <li><a href="#gallery">Gallery</a></li> 
+    </ul>
+</nav>
+   <article id="main"> 
+   <h2 class="secondaryHeading">Welcome to this thing. I really love stuff. Stuff is what I do. My stuff is awesome. Check it out!<br>(I DO NOT like Han Solo!)</h2>
+<section id="about">
+	<h3>Some Information about me</h3>
+	<p>Lorem ipsum dolor sit amet, consectetuer adipiscing 
+elit. Aenean commodo ligula eget dolor. Aenean massa. 
+Cum sociis natoque penatibus et magnis dis parturient 
+montes, nascetur ridiculus mus. Donec quam felis, 
+ultricies nec, pellentesque eu, pretium quis, sem.</p>
+	   </section>
+	   <section id="gallery">
+  <h2 class="secondaryHeading">Check out the Gallery!</h2>
+	<div class="row">
+        <div class="artwork"><a class="example-image-link" href="img/artwork1_large.jpg" data-lightbox="gallery_set1" data-title="Click the right half of the image to move forward.">
+            <div class="artwork-holder">
+                <img class="example-image" src="img/artwork1_small.jpg" alt=""/>
+            </div>
+            <div class="overlay"></div>
+            <div class="overlay-text">
+                Art 1
+            </div></a>
+        </div>
+           <div class="artwork"><a class="example-image-link" href="img/artwork2_large.jpg" data-lightbox="gallery_set1" data-title="Click the right half of the image to move forward.">
+            <div class="artwork-holder">
+                <img class="example-image" src="img/artwork2_small.jpg" alt=""/>
+            </div>
+            <div class="overlay"></div>
+            <div class="overlay-text">
+                Art 2
+            </div></a>
+        </div>
+           <div class="artwork"><a class="example-image-link" href="img/artwork3_large.jpg" data-lightbox="gallery_set1" data-title="Click the right half of the image to move forward.">
+            <div class="artwork-holder">
+                <img class="example-image" src="img/artwork3_small.jpg" alt=""/>
+            </div>
+            <div class="overlay"></div>
+            <div class="overlay-text">
+                Art 3
+            </div></a>
+        </div>
+    </div>
+ <div class="row">
+        <div class="artwork"><a class="example-image-link" href="img/artwork1_large.jpg" data-lightbox="gallery_set1" data-title="Click the right half of the image to move forward.">
+            <div class="artwork-holder">
+                <img class="example-image" src="img/artwork1_small.jpg" alt=""/>
+            </div>
+            <div class="overlay"></div>
+            <div class="overlay-text">
+                Art 4
+            </div></a>
+        </div>
+           <div class="artwork"><a class="example-image-link" href="img/artwork2_large.jpg" data-lightbox="gallery_set1" data-title="Click the right half of the image to move forward.">
+            <div class="artwork-holder">
+                <img class="example-image" src="img/artwork2_small.jpg" alt=""/>
+            </div>
+            <div class="overlay"></div>
+            <div class="overlay-text">
+                Art 5
+            </div></a>
+        </div>
+           <div class="artwork"><a class="example-image-link" href="img/artwork3_large.jpg" data-lightbox="gallery_set1" data-title="Click the right half of the image to move forward.">
+            <div class="artwork-holder">
+                <img class="example-image" src="img/artwork3_small.jpg" alt=""/>
+            </div>
+            <div class="overlay"></div>
+            <div class="overlay-text">
+                Art 6
+            </div></a>
+        </div>
+    </div>
+
+    <div class="bottom_end">
+    </div>
+	   </section>
+</article>
+<footer>&copy; 2055 Mark Garrett</footer>
+    <div id="ani1"><img src="img/bobo_fett4.svg"  alt="BOBO FETT"></div>
+</div>
+<script>
+	$(document).ready(function() {
+		$('a[href^="#"]').click(function(event) {
+			var id = $(this).attr("href");
+			var offset = 0;/* 0 is how many pixels to offset the link target */
+			var target = $(id).offset().top - offset;
+
+		$('html, body').animate({scrollTop:target}, 500);/* 500 is time to scroll in milliseconds */
+			event.preventDefault();
+		});
+	});
+</script>
+<script type="text/javascript">
+$('body').hide();
+$('body').fadeIn(2000);/* 800 is time it takes for the page to fade in */
+</script>
+<script src="js/lightbox-plus-jquery.min.js"></script>
+    
+</body>
+</html>
