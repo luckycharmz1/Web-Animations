@@ -1,0 +1,58 @@
+#gallery{
+		box-sizing: border-box;
+	}
+.row {
+    display: flex;
+    margin-bottom: 1em;
+}
+
+.artwork {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+    margin-right: 1em;
+	border-radius: 50%;/*optional*/
+}
+
+.artwork:last-child {
+    margin-right: 0;
+}
+
+.artwork-holder>img {
+    height: 100%;
+    position: absolute;
+}
+
+
+.artwork-holder {
+    padding-bottom: 100%;
+}
+
+.overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #000;
+    opacity: 0;
+    transition-duration: .25s;
+	border-radius: 50%;/*optional*/
+}
+
+.overlay:hover {
+    opacity: 0.5;
+}
+
+.overlay-text {
+    font-family: helvetica,sns-serif;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2em;
+    text-align: center;
+    color: #fff;
+	text-shadow: 0 0 5px rgba(0,0,0,1.0);
+
+}
